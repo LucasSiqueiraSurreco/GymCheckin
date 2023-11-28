@@ -3,3 +3,4 @@ notes.md
 .env
 coverage
 zod.md
+.gitignore
