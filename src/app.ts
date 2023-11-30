@@ -29,5 +29,3 @@ app.get('/users', async (request, reply) => {
 
   return reply.status(200).send(id)
 })
-
-factory 4
