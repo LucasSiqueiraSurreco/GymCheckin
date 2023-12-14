@@ -29,3 +29,6 @@ app.get('/users', async (request, reply) => {
 
   return reply.status(200).send(id)
 })
+
+
+14 Caso de uso de academias proximas
