@@ -3,8 +3,13 @@ import { prisma } from './lib/prisma'
 import { appRoutes } from './http/routes'
 import { ZodError } from 'zod'
 import { env } from './env'
+import fastifyJwt from '@fastify/jwt'
 
 export const app = fastify()
+
+app.register(fastifyJwt, {
+  secret: env.JTW_SECRET,
+})
 
 app.register(appRoutes)
 
