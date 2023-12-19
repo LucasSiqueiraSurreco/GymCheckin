@@ -1,5 +1,4 @@
 import 'dotenv/config'
-
 import { randomUUID } from 'node:crypto'
 import { execSync } from 'node:child_process'
 import { Environment } from 'vitest'
@@ -19,7 +18,7 @@ function generateDatabaseURL(schema: string) {
   return url.toString()
 }
 
-export default <Environment>{
+const prismaTestEnvironment: Environment = {
   name: 'prisma',
   async setup() {
     const schema = randomUUID()
@@ -39,4 +38,8 @@ export default <Environment>{
       },
     }
   },
+  // Adicione a propriedade transformMode conforme necessário
+  transformMode: 'ssr', // ou 'web'
 }
+
+export default prismaTestEnvironment
